@@ -49,6 +49,87 @@ public class CasosDePrueba {
         driver.manage().window().maximize();
     }
 
+    /*
+    @Test
+    public void CP003_Inicio_Sesion() throws InterruptedException {
+
+        By localizadorBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
+
+        WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
+
+        btnIniciarSesion.click();
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-username"))).sendKeys("juancarlos.mercado@tsoftglobal.com");
+
+        driver.findElement(By.id("login-password")).sendKeys("123456");
+
+        WebElement btnInicioSesion  = driver.findElement(By.xpath("//button[@id='login-button']"));
+
+        //js.executeScript("arguments[0].scrollIntoView();", btnInicioSesion);
+
+        btnInicioSesion.click();
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Nombre de usuario o contraseña incorrectos.')]")));
+
+        Assert.assertEquals(driver.findElement(By.xpath("//div[contains(text(),'Nombre de usuario o contraseña incorrectos.')]")).getText(),"Nombre de usuario o contraseña incorrectos.");
+
+        Thread.sleep(10000);
+    }
+
+*/
+    @Test
+    public void CP004_Inicio_Sesion_con_Facebook() {
+
+        By localizadorBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
+
+        WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
+
+        btnIniciarSesion.click();
+        //---------------------------------------------------------------------------------------------------------
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='facebook-login']"))).click();
+
+        Assert.assertEquals(driver.getTitle(),"Iniciar sesión en Facebook | Facebook");
+
+    }
+
+    @Test
+    public void CP005_Inicio_Sesion_con_Google(){
+
+        By localizadorBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
+
+        WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
+
+        btnIniciarSesion.click();
+        //---------------------------------------------------------------------------------------------------------
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='google-login']"))).click();
+
+        Assert.assertEquals(driver.getTitle(),"Inicia sesión: Cuentas de Google");
+
+    }
+
+    /*
+    @Test
+    public void CP006(){
+
+        By localizadorBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
+
+        WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
+
+        btnIniciarSesion.click();
+        //---------------------------------------------------------------------------------------------------------
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='google-login']"))).click();
+
+        Assert.assertEquals(driver.getTitle(),"Inicia sesión: Cuentas de Google");
+
+    }
+
+*/
+
+
+/*
     @Test
     public void CP001_Registro_Fallido_Captcha_en_blanco() {
 
@@ -94,7 +175,7 @@ public class CasosDePrueba {
     }
 
     @Test
-    public void CP002_Registro_Fallido_Captcha_en_blanco() {
+    public void CP002_Correo_fallido() {
 
         By localizadorBtnRegistrase = By.xpath("//button[contains(text(),'Registrarte')]");
 
@@ -139,4 +220,6 @@ public class CasosDePrueba {
 
         Assert.assertEquals(driver.findElement(By.xpath("//div[contains(text(),'Las direcciones de correo')]")).getText(),"Las direcciones de correo electrónico no coinciden.");
     }
+
+ */
 }

@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="765f7655-bde7-44bb-ac40-fae2db051b24" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ejemplosSelenium/EsperasSelenium.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CasosDePrueba.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ejemplosSelenium/MasMetodosSelenium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ejemplosSelenium/ElementosWebSelenium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CasosDePrueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CasosDePrueba.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,17 +34,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/domingo.saavedra/Downloads/SeleniumPrimerosPasos&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/juancarlos.mercado/OneDrive - TSOFT/Documentos/Intellij poryectos/SeleniumPrimerosPasos",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\domingo.saavedra\Downloads\SeleniumPrimerosPasos\src\test\resources\drivers" />
