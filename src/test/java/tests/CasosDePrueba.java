@@ -49,7 +49,7 @@ public class CasosDePrueba {
         driver.manage().window().maximize();
     }
 
-    /*
+
     @Test
     public void CP003_Inicio_Sesion() throws InterruptedException {
 
@@ -65,18 +65,14 @@ public class CasosDePrueba {
 
         WebElement btnInicioSesion  = driver.findElement(By.xpath("//button[@id='login-button']"));
 
-        //js.executeScript("arguments[0].scrollIntoView();", btnInicioSesion);
-
         btnInicioSesion.click();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(text(),'Nombre de usuario o contraseña incorrectos.')]")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(),'Nombre de usuario o contraseña incorrectos.')]")));
 
-        Assert.assertEquals(driver.findElement(By.xpath("//div[contains(text(),'Nombre de usuario o contraseña incorrectos.')]")).getText(),"Nombre de usuario o contraseña incorrectos.");
+        Assert.assertEquals(driver.findElement(By.xpath("//span[contains(text(),'Nombre de usuario o contraseña incorrectos.')]")).getText(),"Nombre de usuario o contraseña incorrectos.");
 
-        Thread.sleep(10000);
     }
 
-*/
     @Test
     public void CP004_Inicio_Sesion_con_Facebook() {
 
@@ -85,7 +81,6 @@ public class CasosDePrueba {
         WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
 
         btnIniciarSesion.click();
-        //---------------------------------------------------------------------------------------------------------
 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='facebook-login']"))).click();
 
@@ -101,7 +96,6 @@ public class CasosDePrueba {
         WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
 
         btnIniciarSesion.click();
-        //---------------------------------------------------------------------------------------------------------
 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='google-login']"))).click();
 
@@ -109,7 +103,6 @@ public class CasosDePrueba {
 
     }
 
-    /*
     @Test
     public void CP006(){
 
@@ -126,10 +119,7 @@ public class CasosDePrueba {
 
     }
 
-*/
-
-
-/*
+    /*
     @Test
     public void CP001_Registro_Fallido_Captcha_en_blanco() {
 
@@ -220,6 +210,6 @@ public class CasosDePrueba {
 
         Assert.assertEquals(driver.findElement(By.xpath("//div[contains(text(),'Las direcciones de correo')]")).getText(),"Las direcciones de correo electrónico no coinciden.");
     }
-
  */
+
 }
