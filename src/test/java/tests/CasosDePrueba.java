@@ -1,5 +1,7 @@
 package tests;
 
+import okhttp3.Headers;
+import okhttp3.internal.http2.Header;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -103,21 +105,51 @@ public class CasosDePrueba {
 
     }
 
+
     @Test
-    public void CP006(){
+    public void CP006_mostrar_resultado_principal_de_busqueda() throws InterruptedException {
 
-        By localizadorBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
+        By byBuscador= By.linkText("Buscar");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byBuscador));
 
-        WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
+        WebElement Btnbuscador = driver.findElement(byBuscador);
 
-        btnIniciarSesion.click();
-        //---------------------------------------------------------------------------------------------------------
+        Btnbuscador.click();
+        By byBoxBuscador= By.xpath("//input[@placeholder='¿Qué te apetece escuchar?']");
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='google-login']"))).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(byBoxBuscador));
 
-        Assert.assertEquals(driver.getTitle(),"Inicia sesión: Cuentas de Google");
+        WebElement boxBuscador= driver.findElement(byBoxBuscador);
 
+        boxBuscador.sendKeys("David Bowie");
+
+        By byResultadoEsperado= By.xpath("//h2[contains(text(),'Resultado principal')]");
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(byResultadoEsperado));
+
+        Assert.assertEquals(driver.findElement(byResultadoEsperado).getText(),"Resultado principal");
     }
+
+    /*
+    @Test
+    public void CP007() throws InterruptedException {
+
+        By byInstagram= By.xpath("//a[@href='https://instagram.com/spotify']");
+
+        Thread.sleep(3000);
+
+        ((JavascriptExecutor)driver).executeScript("scroll(400,400)");
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(byInstagram));
+
+        driver.findElement(byInstagram).click();
+
+
+        Assert.assertEquals(driver.getTitle(),"Spotify (@spotify) • Fotos y vídeos de Instagram");
+    }
+
+
+     */
 
     /*
     @Test
