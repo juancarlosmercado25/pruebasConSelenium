@@ -55,13 +55,15 @@ public class CasosDePrueba {
     @Test
     public void CP003_Inicio_Sesion_correcto(){
 
-        By localizadorBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
-        WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
-        btnIniciarSesion.click();
+        By byBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byBtnIniciarSesion)).click();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-username"))).sendKeys("mercadojuanc25@gmail.com");
-        driver.findElement(By.id("login-password")).sendKeys("Nosomosnada25.");
-        driver.findElement(By.xpath("//button[@id='login-button']")).click();
+        By byUserName= By.xpath("//input[@id='login-username']");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byUserName)).sendKeys("mercadojuanc25@gmail.com");
+
+        By byPassword= By.xpath("//input[@id='login-password']");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byPassword)).sendKeys("Nosomosnada25.");
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='login-button']"))).click();
 
         By byUser= By.xpath("//span[contains(text(),'JuanMercado25')]");
         wait.until(ExpectedConditions.presenceOfElementLocated(byUser));
@@ -73,27 +75,28 @@ public class CasosDePrueba {
     @Test
     public void CP004_Inicio_Sesion_fallido(){
 
-        By byIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
-        driver.findElement(byIniciarSesion).click();
+        By byBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byBtnIniciarSesion)).click();
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-username"))).sendKeys("juancarlos.mercado@tsoftglobal.com");
-        driver.findElement(By.id("login-password")).sendKeys("123456");
+        By byUserName= By.xpath("//input[@id='login-username']");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byUserName)).sendKeys("mail_fallido@gmail.com");
 
-        driver.findElement(By.xpath("//button[@id='login-button']")).click();
+        By byPassword= By.xpath("//input[@id='login-password']");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byPassword)).sendKeys("123456");
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='login-button']"))).click();
 
-        By msjAlerta= By.xpath("//span[contains(text(),'Nombre de usuario o contraseña incorrectos.')]");
-        wait.until(ExpectedConditions.presenceOfElementLocated(msjAlerta));
+        By byMensajeAlerta= By.xpath("//span[contains(text(),'Nombre de usuario o contraseña incorrectos.')]");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byMensajeAlerta));
 
-        Assert.assertEquals(driver.findElement(msjAlerta).getText(),"Nombre de usuario o contraseña incorrectos.");
+        Assert.assertEquals(driver.findElement(byMensajeAlerta).getText(),"Nombre de usuario o contraseña incorrectos.");
 
     }
 
     @Test
     public void CP005_abrir_portal_google_incio_session(){
 
-        By localizadorBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
-        WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
-        btnIniciarSesion.click();
+        By byBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byBtnIniciarSesion)).click();
 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='google-login']"))).click();
 
@@ -104,34 +107,23 @@ public class CasosDePrueba {
     @Test
     public void CP006_abrir_portal_facebook_incio_session() {
 
-        By localizadorBtnIniciarSesion = By.xpath("//button[@data-testid='login-button']");
-        WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
-        btnIniciarSesion.click();
-
+        By byBtnIniciarSesion = By.xpath("//button[@data-testid='login-button']");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byBtnIniciarSesion)).click();
 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='facebook-login']"))).click();
-        driver.findElement(By.xpath("//input[@name='email']")).sendKeys("mercado.juancarlos@tsoftglobal.com");
-        driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("6123456");
-        driver.findElement(By.xpath("//*[@name='login']")).click();
 
-        By alertaIS = By.xpath("//div[@role='alert']");
-        wait.until(ExpectedConditions.presenceOfElementLocated(alertaIS));
-        WebElement alerta = driver.findElement(alertaIS);
-        Assert.assertEquals(alerta.getText(), "El correo electrónico que has introducido no está conectado a una cuenta. Encuentra tu cuenta e inicia sesión.");
-
+        Assert.assertEquals(driver.getTitle(),"Iniciar sesión en Facebook | Facebook");
     }
 
     @Test
-    public void CP007_Buscar_artista() {
+    public void CP007_Buscar_artista_registrado() {
 
         By byBuscador= By.xpath("//span[contains(text(),'Buscar')]");
-        wait.until(ExpectedConditions.presenceOfElementLocated(byBuscador));
-        driver.findElement(byBuscador).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(byBuscador)).click();
 
         By byTxtBuscador= By.xpath("//input[@placeholder='¿Qué te apetece escuchar?']");
         wait.until(ExpectedConditions.presenceOfElementLocated(byTxtBuscador));
         WebElement txtBuscador= driver.findElement(byTxtBuscador);
-
         txtBuscador.sendKeys("David Bowie");
 
         By byArtista= By.xpath("//div[contains(text(),'David Bowie')]");
