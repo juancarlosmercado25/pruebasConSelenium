@@ -54,35 +54,9 @@
       <recent name="ejemplosSelenium" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CasosDePrueba">
-    <configuration name="ElementosWebSelenium" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ejemplosSelenium.ElementosWebSelenium" />
-      <module name="SeleniumPrimerosPasos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ejemplosSelenium.ElementosWebSelenium" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EsperasSelenium" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ejemplosSelenium.EsperasSelenium" />
-      <module name="SeleniumPrimerosPasos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ejemplosSelenium.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CasosDePrueba" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPrimerosPasos" />
+  <component name="RunManager" selected="TestNG.CasosDePrueba.CP007_Buscar_artista">
+    <configuration name="CasosDePrueba.CP004_Inicio_Sesion_fallido" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPrimerosPasosClase" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -91,24 +65,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.CasosDePrueba" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CasosDePrueba.CP001_Registro_Fallido_Captcha_en_blanco" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPrimerosPasos" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CasosDePrueba" />
-      <option name="METHOD_NAME" value="CP001_Registro_Fallido_Captcha_en_blanco" />
+      <option name="METHOD_NAME" value="CP004_Inicio_Sesion_fallido" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -116,8 +73,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CasosDePrueba.CP002_Registro_Fallido_Captcha_en_blanco" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SeleniumPrimerosPasos" />
+    <configuration name="CasosDePrueba.CP005_Inicio_Sesion_con_Google_fallido" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPrimerosPasosClase" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -126,7 +83,61 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.CasosDePrueba" />
-      <option name="METHOD_NAME" value="CP002_Registro_Fallido_Captcha_en_blanco" />
+      <option name="METHOD_NAME" value="CP005_Inicio_Sesion_con_Google_fallido" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CasosDePrueba.CP006_mostrar_resultado_principal_de_busqueda" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPrimerosPasosClase" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CasosDePrueba" />
+      <option name="METHOD_NAME" value="CP006_mostrar_resultado_principal_de_busqueda" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CasosDePrueba.CP007_Buscar_artista" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPrimerosPasosClase" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CasosDePrueba" />
+      <option name="METHOD_NAME" value="CP007_Buscar_artista" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CasosDePrueba.CP007_mostrar_resultado_principal_de_busqueda" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SeleniumPrimerosPasosClase" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CasosDePrueba" />
+      <option name="METHOD_NAME" value="CP007_mostrar_resultado_principal_de_busqueda" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -136,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.CasosDePrueba" />
-        <item itemvalue="TestNG.CasosDePrueba.CP002_Registro_Fallido_Captcha_en_blanco" />
-        <item itemvalue="TestNG.CasosDePrueba.CP001_Registro_Fallido_Captcha_en_blanco" />
-        <item itemvalue="Application.EsperasSelenium" />
-        <item itemvalue="Application.ElementosWebSelenium" />
+        <item itemvalue="TestNG.CasosDePrueba.CP007_Buscar_artista" />
+        <item itemvalue="TestNG.CasosDePrueba.CP007_mostrar_resultado_principal_de_busqueda" />
+        <item itemvalue="TestNG.CasosDePrueba.CP006_mostrar_resultado_principal_de_busqueda" />
+        <item itemvalue="TestNG.CasosDePrueba.CP005_Inicio_Sesion_con_Google_fallido" />
+        <item itemvalue="TestNG.CasosDePrueba.CP004_Inicio_Sesion_fallido" />
       </list>
     </recent_temporary>
   </component>

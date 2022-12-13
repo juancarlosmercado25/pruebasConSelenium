@@ -53,50 +53,46 @@ public class CasosDePrueba {
 
 
     @Test
-    public void CP003_Inicio_Sesion() throws InterruptedException {
+    public void CP003_Inicio_Sesion_correcto(){
 
         By localizadorBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
-
         WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
-
         btnIniciarSesion.click();
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-username"))).sendKeys("mercadojuanc25@gmail.com");
+        driver.findElement(By.id("login-password")).sendKeys("Nosomosnada25.");
+        driver.findElement(By.xpath("//button[@id='login-button']")).click();
+
+        By byUser= By.xpath("//span[contains(text(),'JuanMercado25')]");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byUser));
+
+        Assert.assertEquals(driver.findElement(byUser).getText(),"JuanMercado25");
+
+    }
+
+    @Test
+    public void CP004_Inicio_Sesion_fallido(){
+
+        By byIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
+        driver.findElement(byIniciarSesion).click();
 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("login-username"))).sendKeys("juancarlos.mercado@tsoftglobal.com");
-
         driver.findElement(By.id("login-password")).sendKeys("123456");
 
-        WebElement btnInicioSesion  = driver.findElement(By.xpath("//button[@id='login-button']"));
+        driver.findElement(By.xpath("//button[@id='login-button']")).click();
 
-        btnInicioSesion.click();
+        By msjAlerta= By.xpath("//span[contains(text(),'Nombre de usuario o contraseña incorrectos.')]");
+        wait.until(ExpectedConditions.presenceOfElementLocated(msjAlerta));
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(),'Nombre de usuario o contraseña incorrectos.')]")));
-
-        Assert.assertEquals(driver.findElement(By.xpath("//span[contains(text(),'Nombre de usuario o contraseña incorrectos.')]")).getText(),"Nombre de usuario o contraseña incorrectos.");
-
-    }
-
-    @Test
-    public void CP004_Inicio_Sesion_con_Facebook() {
-
-        By localizadorBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
-
-        WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
-
-        btnIniciarSesion.click();
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='facebook-login']"))).click();
-
-        Assert.assertEquals(driver.getTitle(),"Iniciar sesión en Facebook | Facebook");
+        Assert.assertEquals(driver.findElement(msjAlerta).getText(),"Nombre de usuario o contraseña incorrectos.");
 
     }
 
     @Test
-    public void CP005_Inicio_Sesion_con_Google(){
+    public void CP005_abrir_portal_google_incio_session(){
 
         By localizadorBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
-
         WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
-
         btnIniciarSesion.click();
 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='google-login']"))).click();
@@ -105,51 +101,44 @@ public class CasosDePrueba {
 
     }
 
+    @Test
+    public void CP006_abrir_portal_facebook_incio_session() {
+
+        By localizadorBtnIniciarSesion = By.xpath("//button[@data-testid='login-button']");
+        WebElement btnIniciarSesion = driver.findElement(localizadorBtnIniciarSesion);
+        btnIniciarSesion.click();
+
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='facebook-login']"))).click();
+        driver.findElement(By.xpath("//input[@name='email']")).sendKeys("mercado.juancarlos@tsoftglobal.com");
+        driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("6123456");
+        driver.findElement(By.xpath("//*[@name='login']")).click();
+
+        By alertaIS = By.xpath("//div[@role='alert']");
+        wait.until(ExpectedConditions.presenceOfElementLocated(alertaIS));
+        WebElement alerta = driver.findElement(alertaIS);
+        Assert.assertEquals(alerta.getText(), "El correo electrónico que has introducido no está conectado a una cuenta. Encuentra tu cuenta e inicia sesión.");
+
+    }
 
     @Test
-    public void CP006_mostrar_resultado_principal_de_busqueda() throws InterruptedException {
+    public void CP007_Buscar_artista() {
 
-        By byBuscador= By.linkText("Buscar");
+        By byBuscador= By.xpath("//span[contains(text(),'Buscar')]");
         wait.until(ExpectedConditions.presenceOfElementLocated(byBuscador));
+        driver.findElement(byBuscador).click();
 
-        WebElement Btnbuscador = driver.findElement(byBuscador);
+        By byTxtBuscador= By.xpath("//input[@placeholder='¿Qué te apetece escuchar?']");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byTxtBuscador));
+        WebElement txtBuscador= driver.findElement(byTxtBuscador);
 
-        Btnbuscador.click();
-        By byBoxBuscador= By.xpath("//input[@placeholder='¿Qué te apetece escuchar?']");
+        txtBuscador.sendKeys("David Bowie");
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(byBoxBuscador));
+        By byArtista= By.xpath("//div[contains(text(),'David Bowie')]");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byArtista));
 
-        WebElement boxBuscador= driver.findElement(byBoxBuscador);
-
-        boxBuscador.sendKeys("David Bowie");
-
-        By byResultadoEsperado= By.xpath("//h2[contains(text(),'Resultado principal')]");
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(byResultadoEsperado));
-
-        Assert.assertEquals(driver.findElement(byResultadoEsperado).getText(),"Resultado principal");
+        Assert.assertEquals(driver.findElement(byArtista).getText(),"David Bowie");
     }
-
-    /*
-    @Test
-    public void CP007() throws InterruptedException {
-
-        By byInstagram= By.xpath("//a[@href='https://instagram.com/spotify']");
-
-        Thread.sleep(3000);
-
-        ((JavascriptExecutor)driver).executeScript("scroll(400,400)");
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(byInstagram));
-
-        driver.findElement(byInstagram).click();
-
-
-        Assert.assertEquals(driver.getTitle(),"Spotify (@spotify) • Fotos y vídeos de Instagram");
-    }
-
-
-     */
 
     /*
     @Test
