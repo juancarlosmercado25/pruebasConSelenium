@@ -1,14 +1,10 @@
 package tests;
 
-import okhttp3.Headers;
-import okhttp3.internal.http2.Header;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -53,7 +49,7 @@ public class CasosDePrueba {
 
 
     @Test
-    public void CP003_Inicio_Sesion_correcto(){
+    public void CP001_Inicio_Sesion_correcto(){
 
         By byBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
         wait.until(ExpectedConditions.presenceOfElementLocated(byBtnIniciarSesion)).click();
@@ -73,7 +69,7 @@ public class CasosDePrueba {
     }
 
     @Test
-    public void CP004_Inicio_Sesion_fallido(){
+    public void CP002_Inicio_Sesion_fallido(){
 
         By byBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
         wait.until(ExpectedConditions.presenceOfElementLocated(byBtnIniciarSesion)).click();
@@ -92,8 +88,21 @@ public class CasosDePrueba {
 
     }
 
+
     @Test
-    public void CP005_abrir_portal_google_incio_session(){
+    public void CP003_abrir_portal_facebook_incio_session() {
+
+        By byBtnIniciarSesion = By.xpath("//button[@data-testid='login-button']");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byBtnIniciarSesion)).click();
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='facebook-login']"))).click();
+
+        Assert.assertEquals(driver.getTitle(),"Iniciar sesión en Facebook | Facebook");
+    }
+
+
+    @Test
+    public void CP004_abrir_portal_google_incio_session(){
 
         By byBtnIniciarSesion = By.xpath("//span[contains(text(),'Iniciar sesión')]");
         wait.until(ExpectedConditions.presenceOfElementLocated(byBtnIniciarSesion)).click();
@@ -105,18 +114,7 @@ public class CasosDePrueba {
     }
 
     @Test
-    public void CP006_abrir_portal_facebook_incio_session() {
-
-        By byBtnIniciarSesion = By.xpath("//button[@data-testid='login-button']");
-        wait.until(ExpectedConditions.presenceOfElementLocated(byBtnIniciarSesion)).click();
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-testid='facebook-login']"))).click();
-
-        Assert.assertEquals(driver.getTitle(),"Iniciar sesión en Facebook | Facebook");
-    }
-
-    @Test
-    public void CP007_Buscar_artista_registrado() {
+    public void CP005_Buscar_artista_registrado() {
 
         By byBuscador= By.xpath("//span[contains(text(),'Buscar')]");
         wait.until(ExpectedConditions.presenceOfElementLocated(byBuscador)).click();
