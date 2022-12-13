@@ -122,9 +122,7 @@ public class CasosDePrueba {
         wait.until(ExpectedConditions.presenceOfElementLocated(byBuscador)).click();
 
         By byTxtBuscador= By.xpath("//input[@placeholder='¿Qué te apetece escuchar?']");
-        wait.until(ExpectedConditions.presenceOfElementLocated(byTxtBuscador));
-        WebElement txtBuscador= driver.findElement(byTxtBuscador);
-        txtBuscador.sendKeys("David Bowie");
+        wait.until(ExpectedConditions.presenceOfElementLocated(byTxtBuscador)).sendKeys("David Bowie");
 
         By byArtista= By.xpath("//div[contains(text(),'David Bowie')]");
         wait.until(ExpectedConditions.presenceOfElementLocated(byArtista));
